@@ -1,6 +1,6 @@
 {
   "name": "wimagewriterexp",
-  "version": "0.2.66",
+  "version": "0.2.67",
   "description": "___",
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
   "license": "MIT",
@@ -21,11 +21,11 @@
     "url": "https://github.com/Wandalen/wImageWriterExp/issues"
   },
   "dependencies": {
-    "wTools": "gamma"
+    "wTools": "delta"
   },
   "devDependencies": {
     "eslint": "7.1.0",
-    "wTesting": "gamma",
+    "wTesting": "delta",
     "wimagewriterexp": "file:."
   },
   "keywords": [
