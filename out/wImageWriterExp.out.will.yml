@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wImageWriterExp.out
 consistency:
-  wImageWriterExp.out.will.yml: &ref_0
-    hash: d16a92b6162571766aa44e3c9e1eebfb
-    size: 37445
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: 4a5bd9d5d0c9a3d9a8cfabc4da90cc2e
     size: 1703
-  ../.im.will.yml: &ref_2
-    hash: 0c0c686e146cb3be13df8a1693af6cd3
-    size: 4740
+  ../.im.will.yml: &ref_1
+    hash: 246713d9e58b5119ebed8ec8d896e6ef
+    size: 4722
 module:
   wImageWriterExp.out:
     about:
@@ -19,19 +16,19 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - tools
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wimagewriterexp
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -682,24 +679,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -788,9 +767,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wImageWriterExp.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wImageWriterExp
@@ -798,21 +776,13 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - tools
-        - wTools
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wimagewriterexp
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -1468,6 +1438,5 @@ module:
         hash: 4a5bd9d5d0c9a3d9a8cfabc4da90cc2e
         size: 1703
       ../.im.will.yml:
-        hash: 0c0c686e146cb3be13df8a1693af6cd3
-        size: 4740
-      wImageWriterExp.out.will.yml: *ref_0
+        hash: 246713d9e58b5119ebed8ec8d896e6ef
+        size: 4722
